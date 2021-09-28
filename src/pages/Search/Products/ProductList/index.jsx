@@ -1,31 +1,22 @@
+import React, {useEffect} from 'react';
 import ProductItem from '../ProductItem';
 import ProductSkeleton from '../ProductSkeleton';
 
 // styles
 import styles from './ProductList.module.scss';
 
-const properties = [
-  {
-    id: 1,
-    img: '/images/image-1.png',
-    title: 'Luxe villa in Alicante',
-    address: 'Murcia, Costa Cálida, Spanje',
-    slappkamers: 3,
-    badkamers: 2,
-    price: 550
-  },
-  {
-    id: 2,
-    img: '/images/image-1.png',
-    title: 'Luxe villa in Alicante',
-    address: 'Murcia, Costa Cálida, Spanje',
-    slappkamers: 3,
-    badkamers: 2,
-    price: 550
-  }
-]
+// redux
+import { connect } from 'react-redux'
+// redux action
+import {
+  action_loadProperty
+} from '../../../../store/actions'
 
-const ProductList = () => {
+const ProductList = ({ action_loadProperty, loading, properties }) => {
+  useEffect(() => {
+    action_loadProperty();
+  }, [action_loadProperty]);
+
   return (
     <div className={styles.productList}>
       {properties && properties.length > 0 ?
@@ -41,4 +32,12 @@ const ProductList = () => {
   );
 }
 
-export default ProductList;
+// map state to props
+const mapStateToProps = ({ propertyReducer }) => {
+  const { loading, properties } = propertyReducer;
+  return { loading, properties }
+}
+
+export default connect(mapStateToProps, {
+  action_loadProperty
+})(ProductList);
