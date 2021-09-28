@@ -1,4 +1,5 @@
 import ProductItem from '../ProductItem';
+import ProductSkeleton from '../ProductSkeleton';
 
 // styles
 import styles from './ProductList.module.scss';
@@ -27,9 +28,15 @@ const properties = [
 const ProductList = () => {
   return (
     <div className={styles.productList}>
-      {(properties || []).map(property => 
-        <ProductItem key={property.id} {...property} />
-      )}
+      {properties && properties.length > 0 ?
+        properties.map(property => 
+          <ProductItem key={property.id} {...property} />
+        )
+        :
+        [1, 2, 3, 4, 5, 6].map(i => 
+          <ProductSkeleton key={i}/>
+        )
+      }
     </div>
   );
 }
