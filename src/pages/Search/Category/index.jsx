@@ -1,31 +1,44 @@
-import React, { useState } from 'react';
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
+import React, {useState} from 'react';
+import Dropdown from '../../../components/DropDown';
 
+import { SORTS, TYPES } from './constants';
 // styles
 import styles from './Category.module.scss';
 
 const Category = () => {
-  const [age, setAge] = useState('');
+  
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
-console.log('==>', styles.notchedOutline)
   return (
     <>
-      <Select
-        // classes={{notchedOutline: styles.notchedOutline}}
-        inputProps={{classes:{notchedOutline: styles.notchedOutline}}}
-        fullWidth
-        value={age}
-        onChange={handleChange}
-        startAdornment='Sort by'
-      >
-        <MenuItem value={10}>Ten</MenuItem>
-        <MenuItem value={20}>Twenty</MenuItem>
-        <MenuItem value={30}>Thirty</MenuItem>
-      </Select>
+      <Dropdown
+        items={SORTS.items}
+        value={SORTS.items[1]}
+        prefix={SORTS.prefix}
+        classes={{
+          dropdown: styles.dropdown,
+          toggle: styles.toggle,
+          label: styles.label,
+          prefix: styles.prefix,
+          dropdownContent: styles.dropdownContent,
+          item: styles.item,
+          active: styles.active
+        }}
+      />
+
+      <Dropdown
+        items={TYPES.items}
+        value={TYPES.items[1]}
+        prefix={TYPES.prefix}
+        classes={{
+          dropdown: styles.dropdown,
+          toggle: styles.toggle,
+          label: styles.label,
+          prefix: styles.prefix,
+          dropdownContent: styles.dropdownContent,
+          item: styles.item,
+          active: styles.active
+        }}
+      />
     </>
   );
 }

@@ -1,12 +1,74 @@
-.notchedOutline {
-  // .MuiOutlinedInput-notchedOutline {
-    border: 1px solid #DBDBDB;
-    box-sizing: border-box;
-    border-radius: 0;
-  
-    &:focus {
-      border: 1px solid #DBDBDB;
-    }
-  // }
-  
+.dropdown {
+  width: 270px;
 }
+
+.toggle {
+  border: 1px solid #DBDBDB;
+  border-radius: 0;
+  padding: 10px 19px 10px 10px;
+  margin: 0;
+  height: auto;
+
+  &:focus {
+    outline: none;
+    border-color: #DBDBDB;
+  }
+}
+
+.label {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  color: #191C1F;
+
+  margin-top: 0;
+}
+
+.prefix {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  color: #5E6263;
+
+  margin-right: 20px;
+}
+
+.dropdownContent {
+  top: 66px;
+  width: 270px;
+  padding: 20px 0;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
+
+.item {
+  cursor: pointer;
+  display: block;
+  padding: 0 20px;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 200%;
+  letter-spacing: 0.02em;
+  color: #191C1F;
+
+  &:hover {
+    background-color: rgba(236, 127, 7, 0.1);
+  }
+
+  &.active {
+    font-weight: normal;
+    color: #FFFFFF;
+    background-color: #EC7F07;
+  }
+}
+

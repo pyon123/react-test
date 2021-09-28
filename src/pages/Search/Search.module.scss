@@ -5,7 +5,10 @@
 
 .category {
   width: 270px;
-  height: auto;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   padding: 20px 0;
   border-top: 1px solid #F3F4F5;
   border-bottom: 1px solid #F3F4F5;
