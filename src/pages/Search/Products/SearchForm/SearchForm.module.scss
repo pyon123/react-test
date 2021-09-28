@@ -1,0 +1,51 @@
+.searchForm {
+  display: flex;
+  flex-direction: row;
+}
+
+.button {
+  width: 148px;
+  height: 100%;
+  background: #EC7F07;
+  border-radius: 0px 4px 4px 0px;
+  border: 0;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #FFFFFF;
+}
+
+.buttonLoading {
+  background-color: #E0E0E0;
+  border-radius: 0px 4px 4px 0px;
+}
+
+.inputWrapper{
+  padding: 12px 0;
+  border: 1px solid #EAF6FF;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.inputIcon {
+  width: 16px;
+  height: 15.14px;
+}
+
+.inputText {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  padding: 0;
+  color: #5E6263;
+
+  &::placeholder {
+    color: #aaa;
+  }
+}

@@ -1,0 +1,12 @@
+.notchedOutline {
+  // .MuiOutlinedInput-notchedOutline {
+    border: 1px solid #DBDBDB;
+    box-sizing: border-box;
+    border-radius: 0;
+  
+    &:focus {
+      border: 1px solid #DBDBDB;
+    }
+  // }
+  
+}

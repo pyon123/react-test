@@ -1,13 +1,17 @@
+import Category from './Category';
+import Products from './Products';
+
+// styles
 import styles from './Search.module.scss';
 
 function Search() {
   return (
     <div className={styles['search-wrapper']}>
-      <div className={styles.left}>
-        hello
+      <div className={styles.category}>
+        <Category />
       </div>
-      <div className={styles.right}>
-        world
+      <div className={styles.products}>
+        <Products />
       </div>
     </div>
   );

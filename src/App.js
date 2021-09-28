@@ -3,7 +3,7 @@ import Search from './pages/Search';
 // styles
 import './App.scss';
 
-function App() {
+const App = () => {
   return (
     <div className='container'>
       <Search />

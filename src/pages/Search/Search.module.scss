@@ -1,13 +1,19 @@
 .search-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 40px;
+  display: flex;
+  flex-direction: row;
 }
 
-.left {
-  background-color: red;
+.category {
+  width: 270px;
+  height: auto;
+  padding: 20px 0;
+  border-top: 1px solid #F3F4F5;
+  border-bottom: 1px solid #F3F4F5;
 }
 
-.right {
-  background-color: rosybrown;
+.products {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 40px;
 }
