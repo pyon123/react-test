@@ -1,0 +1,13 @@
+.app-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 40px;
+}
+
+.left {
+  background-color: red;
+}
+
+.right {
+  background-color: rosybrown;
+}
