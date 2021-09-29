@@ -8,15 +8,11 @@ import SearchIcon from '../../../../assets/icons/Search.svg'
 // styles
 import styles from './SearchForm.module.scss';
 
-const SearchForm = () => {
+const SearchForm = ({onSearch, loading}) => {
   const [searchVal, setSearchVal] = useState('');
 
   const onChange = (value) => {
     setSearchVal(value)
-  }
-
-  const onSearch = () => {
-    console.log('search')
   }
 
   return (
@@ -41,7 +37,8 @@ const SearchForm = () => {
         text='Search'
         prevent
         stopPropagation
-        onClick={onSearch}
+        loading={loading}
+        onClick={() => onSearch(searchVal)}
       />
     </div>
   );

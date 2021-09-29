@@ -1,19 +1,18 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Dropdown from '../../../components/DropDown';
 
-import { SORTS, TYPES } from './constants';
+import { SORTS, TYPES, FilterTypes } from './constants';
 // styles
 import styles from './Category.module.scss';
 
-const Category = () => {
-  
-
+const Category = ({onFilterChange}) => {
   return (
     <>
       <Dropdown
         items={SORTS.items}
         value={SORTS.items[1]}
         prefix={SORTS.prefix}
+        onChange={item => onFilterChange(FilterTypes.sort, item)}
         classes={{
           dropdown: styles.dropdown,
           toggle: styles.toggle,
@@ -29,6 +28,7 @@ const Category = () => {
         items={TYPES.items}
         value={TYPES.items[1]}
         prefix={TYPES.prefix}
+        onChange={item => onFilterChange(FilterTypes.type, item)}
         classes={{
           dropdown: styles.dropdown,
           toggle: styles.toggle,

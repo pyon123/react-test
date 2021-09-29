@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import ProductItem from '../ProductItem';
 import ProductSkeleton from '../ProductSkeleton';
 
@@ -7,19 +7,13 @@ import styles from './ProductList.module.scss';
 
 // redux
 import { connect } from 'react-redux'
-// redux action
-import {
-  action_loadProperty
-} from '../../../../store/actions'
 
-const ProductList = ({ action_loadProperty, loading, properties }) => {
-  useEffect(() => {
-    action_loadProperty();
-  }, [action_loadProperty]);
+const ProductList = ({ loading, properties }) => {
+  
 
   return (
     <div className={styles.productList}>
-      {properties && properties.length > 0 ?
+      {!loading && properties && properties.length > 0 ?
         properties.map(property => 
           <ProductItem key={property.id} {...property} />
         )
@@ -38,6 +32,4 @@ const mapStateToProps = ({ propertyReducer }) => {
   return { loading, properties }
 }
 
-export default connect(mapStateToProps, {
-  action_loadProperty
-})(ProductList);
+export default connect(mapStateToProps)(ProductList);

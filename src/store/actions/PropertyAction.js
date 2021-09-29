@@ -4,8 +4,9 @@ import {
   LOAD_PORPERTY_FAILURE,
 } from './types';
 
-export const action_loadProperty = () => ({
-  type: LOAD_PORPERTY
+export const action_loadProperty = (params) => ({
+  type: LOAD_PORPERTY,
+  payload: {params}
 })
 
 export const action_loadPropertySuccess = (properties) => ({

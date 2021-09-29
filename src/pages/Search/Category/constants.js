@@ -1,4 +1,10 @@
+export const FilterTypes = {
+  sort: 'sortBy',
+  type: 'type'
+}
+
 export const SORTS = {
+  type: FilterTypes.sort,
   prefix: 'Sort by',
   items: [
     {
@@ -17,6 +23,7 @@ export const SORTS = {
 }
 
 export const TYPES = {
+  type: FilterTypes.type,
   prefix: 'Type',
   items: [
     {

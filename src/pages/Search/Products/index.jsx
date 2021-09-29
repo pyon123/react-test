@@ -1,10 +1,10 @@
 import SearchForm from './SearchForm';
 import ProductList from './ProductList';
 
-const Products = () => {
+const Products = (props) => {
   return (
     <>
-      <SearchForm />
+      <SearchForm {...props}/>
       <ProductList />
     </>
   );

@@ -10,9 +10,9 @@ import {
   action_loadPropertyFailure,
 } from '../actions'
 
-function* loadProperty() {
+function* loadProperty({payload}) {
   try {
-    const data = yield call(getData);
+    const data = yield call(getData, payload.params);
     yield put(action_loadPropertySuccess(data));
   }
   catch (error) {
