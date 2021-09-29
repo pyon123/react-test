@@ -1,4 +1,4 @@
-import { all, call, fork, put, takeEvery } from 'redux-saga/effects';
+import { all, call, fork, put, takeLatest } from 'redux-saga/effects';
 import { getData } from '../../util/request';
 
 import {
@@ -22,7 +22,7 @@ function* loadProperty({payload}) {
 }
 
 export function* middle_load() {
-  yield takeEvery(LOAD_PORPERTY, loadProperty)
+  yield takeLatest(LOAD_PORPERTY, loadProperty)
 }
 
 export default function* rootSaga() {

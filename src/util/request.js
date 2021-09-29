@@ -6,7 +6,7 @@ function sleep(ms) {
 }
 
 export const getData = async (params) => {
-  const res = await axios.get(dataPath);
+  const res = await axios.get(dataPath, params);
   await sleep(700);
   return res.data;
 }

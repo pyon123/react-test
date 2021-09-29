@@ -8,22 +8,17 @@ const sagaMiddleware = createSagaMiddleware();
 
 const middlewares = [sagaMiddleware];
 
-export function configureStore(initialState) {
+const configureStore = () => {
   const store = createStore(
     reducers,
-    initialState,
     compose(applyMiddleware(...middlewares))
   );
 
   sagaMiddleware.run(RootSaga);
 
-  if (module.hot) {
-    // Enable Webpack hot module replacement for reducers
-    module.hot.accept('./reducers/index', () => {
-      const nextRootReducer = require('./reducers/index');
-      store.replaceReducer(nextRootReducer);
-    });
-  }
-
   return store;
 }
+
+const store = configureStore();
+
+export default store;

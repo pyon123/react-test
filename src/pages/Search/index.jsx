@@ -29,8 +29,6 @@ function Search({action_loadProperty, loading}) {
       ...searchData,
       [type]: item.value
     })
-
-    loadData();
   }
 
   const onSearch = (val) => {
@@ -38,21 +36,17 @@ function Search({action_loadProperty, loading}) {
       ...searchData,
       search: val,
     })
-
-    loadData();
-  }
-
-  const loadData = () => {
-    action_loadProperty(searchData);
   }
 
   return (
-    <div className={styles['search-wrapper']}>
-      <div className={styles.category}>
-        <Category onFilterChange={onFilterChange}/>
-      </div>
-      <div className={styles.products}>
-        <Products onSearch={onSearch} loading={loading}/>
+    <div className='container'>
+      <div className={styles['search-wrapper']}>
+        <div className={styles.category}>
+          <Category onFilterChange={onFilterChange}/>
+        </div>
+        <div className={styles.products}>
+          <Products onSearch={onSearch} loading={loading}/>
+        </div>
       </div>
     </div>
   );
