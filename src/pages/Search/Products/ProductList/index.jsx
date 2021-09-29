@@ -13,8 +13,8 @@ const ProductList = ({ loading, properties }) => {
 
   return (
     <div className={styles.productList}>
-      {!loading && properties && properties.length > 0 ?
-        properties.map(property => 
+      {!loading ?
+        (properties || []).map(property => 
           <ProductItem key={property.id} {...property} />
         )
         :
