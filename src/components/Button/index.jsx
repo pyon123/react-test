@@ -54,7 +54,7 @@ export default class Button extends PureComponent {
 
                 {loading && 
                   <div className={classNames(styles.loading, classes.loading)}>
-                    <img src={LoadingIcon} alt='loadingIcon'/>
+                    <img src={LoadingIcon} alt='loadingIcon' className={classNames(styles.loader, classes.loader)}/>
                   </div>
                 }
             </button>
