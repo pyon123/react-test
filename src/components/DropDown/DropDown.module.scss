@@ -26,6 +26,10 @@
         border-color: #3e83ff;
     }
 
+    &:hover {
+        cursor: pointer;
+    }
+
     .disabled & {
         opacity: 0.5;
         cursor: not-allowed;

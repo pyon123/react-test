@@ -6,6 +6,10 @@
 .category {
   width: 270px;
   height: fit-content;
+  
+  top: 60px;
+  position: sticky;
+
   display: flex;
   flex-direction: column;
   gap: 10px;

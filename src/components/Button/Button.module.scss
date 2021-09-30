@@ -1,6 +1,11 @@
 .button {
   position: relative;
   background-color: #EC7F07;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
 }
 
 .loading {
